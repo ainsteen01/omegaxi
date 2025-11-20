@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Omega-Xi | Websolutions</title>
+
+    <link rel="icon" type="image/png" href="Images/Favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        /* Base Styles */
+
+        :root {
+
+            --primary: #2563eb;
+
+            --primary-dark: #1d4ed8;
+
+            --text: #1f2937;
+
+            --text-light: #6b7280;
+
+            --background: #ffffff;
+
+            --border: #e5e7eb;
+
+            --radius: 12px;
+
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+            --transition: all 0.3s ease;
+
+        }
+
+
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+        }
+
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+
+        body {
+
+            color: var(--text);
+
+            background-color: var(--background);
+
+            line-height: 1.6;
+
+        }
+
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+
+
+        section {
+
+            padding: 80px 0;
+
+        }
+
+
+
+        h1, h2, h3, h4 {
+
+            line-height: 1.2;
+
+            margin-bottom: 1rem;
+
+        }
+
+
+
+        h1 {
+
+            font-size: 2.5rem;
+
+            font-weight: 700;
+
+        }
+
+
+
+        h2 {
+
+            font-size: 2rem;
+
+            text-align: center;
+
+            margin-bottom: 3rem;
+
+            position: relative;
+
+        }
+
+
+
+        h2:after {
+
+            content: '';
+
+            position: absolute;
+
+            bottom: -10px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 60px;
+
+            height: 4px;
+
+            background-color: var(--primary);
+
+            border-radius: 2px;
+
+        }
+
+
+
+        p {
+
+            margin-bottom: 1.5rem;
+
+            color: var(--text-light);
+
+        }
+
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 12px 28px;
+
+            background-color: var(--primary);
+
+            color: white;
+
+            border-radius: var(--radius);
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: var(--transition);
+
+            border: none;
+
+            cursor: pointer;
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+
+        .btn:hover {
+
+            background-color: var(--primary-dark);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        .btn-outline {
+
+            background-color: transparent;
+
+            border: 2px solid var(--primary);
+
+            color: var(--primary);
+
+        }
+
+
+
+        .btn-outline:hover {
+
+            background-color: var(--primary);
+
+            color: white;
+
+        }
+
+
+
+        .btn-whatsapp {
+
+            background-color: #25D366;
+
+        }
+
+
+
+        .btn-whatsapp:hover {
+
+            background-color: #128C7E;
+
+        }
+
+
+
+        /* Header */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            background-color: rgba(255, 255, 255, 0.95);
+
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+            z-index: 1000;
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .header-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px 0;
+
+        }
+
+
+
+        .logo {
+
+            font-size: 1.5rem;
+
+            font-weight: 700;
+
+            color: var(--primary);
+
+            text-decoration: none;
+
+        }
+
+
+
+        .nav-links {
+
+            display: flex;
+
+            list-style: none;
+
+        }
+
+
+
+        .nav-links li {
+
+            margin-left: 30px;
+
+        }
+
+
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            color: var(--text);
+
+            font-weight: 500;
+
+            padding: 10px;
+
+            transition: var(--transition);
+
+            border-radius: 5px;
+
+        }
+
+
+
+        .nav-links a:hover {
+
+            color: white;
+
+            background-color: #153793;
+
+        }
+
+
+
+        .mobile-menu-btn {
+
+            display: none;
+
+            background: none;
+
+            border: none;
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+
+            color: var(--text);
+
+        }
+
+
+
+        /* Hero Section */
+
+        .hero {
+
+            padding: 160px 0 100px;
+
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+
+            text-align: center;
+
+        }
+
+
+
+        .hero h1 {
+
+            max-width: 800px;
+
+            margin: 0 auto 1.5rem;
+
+        }
+
+
+
+        .hero p {
+
+            max-width: 600px;
+
+            margin: 0 auto 2.5rem;
+
+            font-size: 1.2rem;
+
+        }
+
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+
+        /* About Section */
+
+        .about-content {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+        }
+
+
+
+        .skills {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 20px;
+
+        }
+
+
+
+        .skill-tag {
+
+            padding: 8px 16px;
+
+            background-color: #eff6ff;
+
+            color: var(--primary);
+
+            border-radius: 50px;
+
+            font-size: 0.9rem;
+
+            font-weight: 500;
+
+        }
+
+
+
+        /* Services Section */
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+            gap: 30px;
+
+        }
+
+
+
+        .service-card {
+
+            background-color: white;
+
+            border-radius: var(--radius);
+
+            padding: 30px;
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+
+            text-align: center;
+
+        }
+
+
+
+        .service-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+        }
+
+
+
+        .service-icon {
+
+            font-size: 2.5rem;
+
+            color: var(--primary);
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        /* Portfolio Section */
+
+        .portfolio-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+            gap: 30px;
+
+        }
+
+
+
+        .portfolio-card {
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .portfolio-card:hover {
+
+            transform: translateY(-5px);
+
+        }
+
+
+
+        .portfolio-img {
+
+            height: 220px;
+
+            background-color: #e5e7eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: var(--text-light);
+
+        }
+
+
+
+        .portfolio-content {
+
+            padding: 20px;
+
+        }
+
+
+
+        .portfolio-content h3 {
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        /* Benefits Section */
+
+        .benefits-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+            gap: 30px;
+
+        }
+
+
+
+        .benefit-card {
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+        }
+
+
+
+        .benefit-icon {
+
+            font-size: 2.5rem;
+
+            color: var(--primary);
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        /* Pricing Section */
+
+        .pricing {
+
+            text-align: center;
+
+            background-color: #f8fafc;
+
+            border-radius: var(--radius);
+
+            padding: 50px 30px;
+
+            max-width: 600px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .price {
+
+            font-size: 3rem;
+
+            font-weight: 700;
+
+            color: var(--primary);
+
+            margin: 20px 0;
+
+        }
+
+
+
+        .features-list {
+
+            list-style: none;
+
+            text-align: left;
+
+            max-width: 400px;
+
+            margin: 0 auto 30px;
+
+        }
+
+
+
+        .features-list li {
+
+            margin-bottom: 10px;
+
+            padding-left: 30px;
+
+            position: relative;
+
+        }
+
+
+
+        .features-list li:before {
+
+            content: '✓';
+
+            position: absolute;
+
+            left: 0;
+
+            color: var(--primary);
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* Contact Section */
+
+        .contact-container {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+        }
+
+
+
+        .contact-info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+
+        }
+
+
+
+        .contact-method {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+
+
+        .contact-icon {
+
+            font-size: 1.5rem;
+
+            color: var(--primary);
+
+            width: 50px;
+
+            height: 50px;
+
+            background-color: #eff6ff;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+
+        .contact-form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+
+        }
+
+
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+        }
+
+
+
+        .form-group label {
+
+            font-weight: 500;
+
+        }
+
+
+
+        .form-control {
+
+            padding: 12px 15px;
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            font-size: 1rem;
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .form-control:focus {
+
+            outline: none;
+
+            border-color: var(--primary);
+
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+
+        }
+
+
+
+        textarea.form-control {
+
+            min-height: 150px;
+
+            resize: vertical;
+
+        }
+
+
+
+        /* Footer */
+
+        footer {
+
+            background-color: #1f2937;
+
+            color: white;
+
+            padding: 50px 0 20px;
+
+        }
+
+
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        .footer-logo {
+
+            font-size: 1.5rem;
+
+            font-weight: 700;
+
+            color: white;
+
+        }
+
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 20px;
+
+            height: 100%;
+
+        }
+
+
+
+        .footer-links a {
+
+            color: #d1d5db;
+
+            text-decoration: none;
+
+            transition: var(--transition);
+
+            padding: 10px;
+
+            border-radius: 10px;
+
+        }
+
+
+
+        .footer-links a:hover {
+
+            color: white;
+
+            background-color: #181818;
+
+        }
+
+
+
+        .copyright {
+
+            text-align: center;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #374151;
+
+            color: #9ca3af;
+
+            font-size: 0.9rem;
+
+        }
+
+
+
+        /* Animations */
+
+        .fade-in {
+
+            opacity: 0;
+
+            transform: translateY(20px);
+
+            transition: opacity 0.6s ease, transform 0.6s ease;
+
+        }
+
+
+
+        .fade-in.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+
+
+        /* Responsive Styles */
+
+        @media (max-width: 992px) {
+
+            h1 {
+
+                font-size: 2.2rem;
+
+            }
+
+            
+
+            h2 {
+
+                font-size: 1.8rem;
+
+            }
+
+            
+
+            .about-content, .contact-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+            
+
+            .mobile-menu-btn {
+
+                display: block;
+
+            }
+
+            
+
+            .hero-buttons {
+
+                flex-direction: column;
+
+                align-items: center;
+
+            }
+
+            
+
+            .hero-buttons .btn {
+
+                width: 100%;
+
+                max-width: 300px;
+
+            }
+
+            
+
+            .footer-content {
+
+                flex-direction: column;
+
+                gap: 20px;
+
+                text-align: center;
+
+            }
+
+        }
+
+
+
+        @media (max-width: 576px) {
+
+            section {
+
+                padding: 60px 0;
+
+            }
+
+            
+
+            h1 {
+
+                font-size: 1.8rem;
+
+            }
+
+            
+
+            h2 {
+
+                font-size: 1.5rem;
+
+            }
+
+            
+
+            .portfolio-grid, .services-grid, .benefits-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="container header-container">
+
+            <a href="#" class="logo">Omega-Xi</a>
+
+            <button class="mobile-menu-btn">
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
+            <ul class="nav-links">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#services">Services</a></li>
+
+                <li><a href="#portfolio">Portfolio</a></li>
+
+                <li><a href="#pricing">Pricing</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Hero Section -->
+
+    <section id="home" class="hero">
+
+        <div class="container">
+
+            <h1 class="fade-in">At Omega‑Xi, we empower small businesses with modern, affordable, and easy‑to‑manage websites.</h1>
+
+            <p class="fade-in">Our mission is simple: to help entrepreneurs, startups, and local businesses turn their ideas into professional, user-friendly websites that drive growth.</p>
+
+            <div class="hero-buttons fade-in">
+
+                <a href="#portfolio" class="btn">Our Works</a>
+
+                <a href="https://wa.me/917909103947" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- About Section -->
+
+    <section id="about" class="about">
+
+        <div class="container">
+
+            <h2>About Us</h2>
+
+            <div class="about-content">
+
+                <div class="about-text fade-in">
+
+                    <p>At Omega-Xi, we believe every small business deserves a powerful online presence without the complexity or high costs often associated with web development.</p>
+
+                    <p>Our focus is on creating clean, responsive designs that showcase your brand and help you grow online. With us, you get more than a website—you gain a reliable digital partner.</p>
+
+                    <div class="skills">
+
+                        <span class="skill-tag">HTML</span>
+
+                        <span class="skill-tag">CSS</span>
+
+                        <span class="skill-tag">JavaScript</span>
+
+                        <span class="skill-tag">React</span>
+
+                        <span class="skill-tag">Flutter</span>
+
+                        <span class="skill-tag">UI/UX</span>
+
+                    </div>
+
+                </div>
+
+                <div class="about-image fade-in">
+
+                    <!-- Placeholder for an image -->
+
+                    <div style="height: 300px;background-image: url(Images/Company_Image.png);background-size:contain ;background-position: center;background-repeat: no-repeat; border-radius: var(--radius);background-color: black; display: flex; align-items: center; justify-content: center; color: var(--text-light);">
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Services Section -->
+
+    <section id="services" class="services">
+
+        <div class="container">
+
+            <h2>Our Services</h2>
+
+            <div class="services-grid">
+
+                <div class="service-card fade-in">
+
+                    <div class="service-icon">
+
+                        <i class="fas fa-utensils"></i>
+
+                    </div>
+
+                    <h3>Website for Restaurants</h3>
+
+                    <p>Beautiful menus, online ordering, and reservation systems.</p>
+
+                </div>
+
+                <div class="service-card fade-in">
+
+                    <div class="service-icon">
+
+                        <i class="fas fa-spa"></i>
+
+                    </div>
+
+                    <h3>Website for Salons & Spas</h3>
+
+                    <p>Showcase services with booking functionality.</p>
+
+                </div>
+
+                <div class="service-card fade-in">
+
+                    <div class="service-icon">
+
+                        <i class="fas fa-birthday-cake"></i>
+
+                    </div>
+
+                    <h3>Bakery & Cake Shop Websites</h3>
+
+                    <p>Display products with online ordering options.</p>
+
+                </div>
+
+                <div class="service-card fade-in">
+
+                    <div class="service-icon">
+
+                        <i class="fas fa-store"></i>
+
+                    </div>
+
+                    <h3>Websites for Small Stores</h3>
+
+                    <p>E-commerce solutions for local retailers.</p>
+
+                </div>
+
+                <div class="service-card fade-in">
+
+                    <div class="service-icon">
+
+                        <i class="fas fa-briefcase"></i>
+
+                    </div>
+
+                    <h3>Portfolio Websites for Freelancers</h3>
+
+                    <p>Showcase your work and attract clients.</p>
+
+                </div>
+
+                <div class="service-card fade-in">
+
+                    <div class="service-icon">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                    </div>
+
+                    <h3>WhatsApp Booking Integration</h3>
+
+                    <p>Let customers book appointments via WhatsApp.</p>
+
+                </div>
+
+                <div class="service-card fade-in">
+
+                    <div class="service-icon">
+
+                        <i class="fas fa-server"></i>
+
+                    </div>
+
+                    <h3>Domain + Hosting Setup</h3>
+
+                    <p>Complete setup of your online presence.</p>
+
+                </div>
+
+                <div class="service-card fade-in">
+
+                    <div class="service-icon">
+
+                        <i class="fas fa-bolt"></i>
+
+                    </div>
+
+                    <h3>Fast 2-day Delivery</h3>
+
+                    <p>Get your website live in just 2 days.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Portfolio Section -->
+
+    <section id="portfolio" class="portfolio">
+
+        <div class="container">
+
+            <h2>Our Works</h2>
+
+            <div class="portfolio-grid">
+
+                <div class="portfolio-card fade-in">
+
+                    <div class="portfolio-img" style="background-image: url(Images/Restaurant_Image.png);background-size:cover ;background-position: center;background-repeat: no-repeat;">
+
+                        
+
+                    </div>
+
+                    <div class="portfolio-content">
+
+                        <h3>Restaurant Website</h3>
+
+                        <p>A modern website with online menu and reservation system.</p>
+
+                        <a href="#" class="btn btn-outline">View Demo</a>
+
+                    </div>
+
+                </div>
+
+                <div class="portfolio-card fade-in">
+
+                    <div class="portfolio-img"  style="background-image: url(Images/Salon_Image.png);background-size:cover ;background-position: center;background-repeat: no-repeat;">
+
+                        
+
+                    </div>
+
+                    <div class="portfolio-content">
+
+                        <h3>Salon Website</h3>
+
+                        <p>Elegant design with service showcase and booking functionality.</p>
+
+                        <a href="#" class="btn btn-outline">View Demo</a>
+
+                    </div>
+
+                </div>
+
+                <div class="portfolio-card fade-in">
+
+                    <div class="portfolio-img"  style="background-image: url(Images/Freelance_Image.png);background-size:contain ;background-position: center;background-repeat: no-repeat;">
+
+                        
+
+                    </div>
+
+                    <div class="portfolio-content">
+
+                        <h3>Freelancer Portfolio</h3>
+
+                        <p>Clean portfolio website to showcase work and services.</p>
+
+                        <a href="#" class="btn btn-outline">View Demo</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Benefits Section -->
+
+    <section class="benefits">
+
+        <div class="container">
+
+            <h2>Why Choose Us</h2>
+
+            <div class="benefits-grid">
+
+                <div class="benefit-card fade-in">
+
+                    <div class="benefit-icon">
+
+                        <i class="fas fa-tachometer-alt"></i>
+
+                    </div>
+
+                    <h3>Fast Loading</h3>
+
+                    <p>Websites optimized for speed and performance.</p>
+
+                </div>
+
+                <div class="benefit-card fade-in">
+
+                    <div class="benefit-icon">
+
+                        <i class="fas fa-paint-brush"></i>
+
+                    </div>
+
+                    <h3>Modern Design</h3>
+
+                    <p>Clean, professional designs that impress visitors.</p>
+
+                </div>
+
+                <div class="benefit-card fade-in">
+
+                    <div class="benefit-icon">
+
+                        <i class="fas fa-mobile-alt"></i>
+
+                    </div>
+
+                    <h3>Mobile Responsive</h3>
+
+                    <p>Perfect display on all devices and screen sizes.</p>
+
+                </div>
+
+                <div class="benefit-card fade-in">
+
+                    <div class="benefit-icon">
+
+                        <i class="fas fa-rupee-sign"></i>
+
+                    </div>
+
+                    <h3>Affordable Pricing</h3>
+
+                    <p>High-quality websites at small business-friendly prices.</p>
+
+                </div>
+
+                <div class="benefit-card fade-in">
+
+                    <div class="benefit-icon">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                    </div>
+
+                    <h3>Easy WhatsApp Booking</h3>
+
+                    <p>Simple integration for customer appointments.</p>
+
+                </div>
+
+                <div class="benefit-card fade-in">
+
+                    <div class="benefit-icon">
+
+                        <i class="fas fa-tools"></i>
+
+                    </div>
+
+                    <h3>Free Maintenance</h3>
+
+                    <p>1 month free maintenance after website delivery.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Pricing Section -->
+
+    <section id="pricing" class="pricing-section">
+
+        <div class="container">
+
+            <h2>Simple & Affordable Pricing</h2>
+
+            <div class="pricing fade-in">
+
+                <h3>Starting at just</h3>
+
+                <div class="price">₹1500</div>
+
+                <p>Perfect for small businesses looking to establish their online presence</p>
+
+                <ul class="features-list">
+
+                    <li>Modern, Responsive Design</li>
+
+                    <li>Up to 5 Pages</li>
+
+                    <li>Contact Form</li>
+
+                    <li>Social Media Integration</li>
+
+                    <li>Basic SEO Setup</li>
+
+                    <li>Mobile-Friendly</li>
+
+                    <li>Free 1 Month Maintenance</li>
+
+                </ul>
+
+                <a href="#contact" class="btn">Get Started</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="contact">
+
+        <div class="container">
+
+            <h2>Let's Build Your Website</h2>
+
+            <div class="contact-container">
+
+                <div class="contact-info">
+
+                    <div class="contact-method fade-in">
+
+                        <div class="contact-icon">
+
+                            <i class="fab fa-whatsapp"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>WhatsApp</h3>
+
+                            <p>+91 79091 03947</p>
+
+                            <a href="https://wa.me/917909103947" class="btn btn-whatsapp" style="margin-top: 10px; padding: 8px 16px; font-size: 0.9rem;">Message Now</a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-method fade-in">
+
+                        <div class="contact-icon">
+
+                            <i class="fas fa-envelope"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Email</h3>
+
+                            <p>contact@omegaxi.in</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-method fade-in">
+
+                        <div class="contact-icon">
+
+                            <i class="fas fa-phone"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Phone</h3>
+
+                            <p>+91 79091 03947</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-form-container fade-in">
+
+                    <form class="contact-form">
+
+                        <div class="form-group">
+
+                            <label for="name">Your Name</label>
+
+                            <input type="text" id="name" name="user_name" class="form-control" placeholder="Enter your name" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="email">Your Email</label>
+
+                            <input type="email" id="email" name="user_email" class="form-control" placeholder="Enter your email" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="message">Your Message</label>
+
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project" required></textarea>
+
+                        </div>
+
+                        <button type="submit" class="btn">Send Message</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <a href="#" class="footer-logo">Omega-Xi</a>
+
+                <div class="footer-links">
+
+                    <a href="#home">Home</a>
+
+                    <a href="#about">About</a>
+
+                    <a href="#services">Services</a>
+
+                    <a href="#portfolio">Portfolio</a>
+
+                    <a href="#contact">Contact</a>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+
+                &copy; 2023 Omega-Xi. All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("YOUR_PUBLIC_KEY");
+
+        // Mobile menu toggle
+
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+
+            document.querySelector('.nav-links').classList.toggle('show');
+
+        });
+
+
+
+        // Scroll animations
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add('visible');
+
+                }
+
+            });
+
+        }, { threshold: 0.1 });
+
+        
+
+        fadeElements.forEach(el => {
+
+            observer.observe(el);
+
+        });
+
+
+
+        // Header scroll effect
+
+        window.addEventListener('scroll', function() {
+
+            const header = document.querySelector('header');
+
+            if (window.scrollY > 100) {
+
+                header.style.padding = '10px 0';
+
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+
+            } else {
+
+                header.style.padding = '20px 0';
+
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+
+            }
+
+        });
+
+
+
+        // Form submission
+
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this).then(() => {
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            }).catch((error) => {
+                alert("Failed to send message: " + JSON.stringify(error));
+            });     
+        });
+
+    </script>
+
+</body>
+
+</html>
