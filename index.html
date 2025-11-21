@@ -293,6 +293,26 @@
         }
 
 
+        .logo::before{
+
+            content: "";
+            
+            height: 70px;
+            
+            width:70px;
+            
+            background: url('Images/Favicon.png') no-repeat center center;
+            
+            display: inline-block;
+            
+            background-size: contain;
+            
+            vertical-align: middle;
+            
+            margin-right: 10px;
+
+        }
+
 
         .nav-links {
 
@@ -356,6 +376,12 @@
 
         }
 
+        .mobile-nav-links{
+
+                display: none;
+
+
+        }
 
 
         /* Hero Section */
@@ -972,7 +998,7 @@
 
 
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
 
             .nav-links {
 
@@ -980,11 +1006,76 @@
 
             }
 
+
+            .mobile-nav-links{
+
+                display: flex;
+
+                flex-direction: column;
+
+                gap: 50px;
+
+                list-style: none;
+
+                width: 100%;
+
+            }
+
+            .mobile-nav-links a{
+
+                font-size: 1.5rem;
+
+                font-weight: bolder;
+
+                text-decoration: none;
+
+                text-align: center;
+
+                width:100%;
+
+                color: black;
+
+                padding: 20px;
+
+
+            }
             
+            .mobile-menu{
+
+                display: none;
+
+                flex-direction: column;
+
+                position:fixed;
+
+                right: 0;
+
+                top:0;
+
+                z-index: 2000;
+
+                height:100vh;
+
+                width:30%;
+
+                border: 1px solid black;
+
+                background-color: white;
+            }
+
+
 
             .mobile-menu-btn {
 
                 display: block;
+
+            }
+
+            .mobile-nav-links a:hover{
+
+                background-color: #153793;
+
+                color: white;
 
             }
 
@@ -1098,7 +1189,25 @@
 
     </header>
 
+    <div class="mobile-menu">
 
+        <ul class="mobile-nav-links">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#services">Services</a></li>
+
+                <li><a href="#portfolio">Portfolio</a></li>
+
+                <li><a href="#pricing">Pricing</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+    </div>
 
     <!-- Hero Section -->
 
@@ -1332,7 +1441,7 @@
 
                         <p>A modern website with online menu and reservation system.</p>
 
-                        <a href="#" class="btn btn-outline">View Demo</a>
+                        <a href=" http://restaurantdemo.omegaxi.in/" class="btn btn-outline">View Demo</a>
 
                     </div>
 
@@ -1685,13 +1794,28 @@
     <script>
         emailjs.init("YOUR_PUBLIC_KEY");
 
-        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
 
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 
-            document.querySelector('.nav-links').classList.toggle('show');
+        mobileMenuBtn.addEventListener('click', function(e) {
+
+        e.stopPropagation();
+
+        mobileMenu.style.display = 
+            mobileMenu.style.display === "flex" ? "none" : "flex";
 
         });
+
+        document.addEventListener('click', (e) => {
+
+        if (e.target !== mobileMenuBtn) {
+
+            mobileMenu.style.display = "none";
+
+        }
+        });
+
 
 
 
