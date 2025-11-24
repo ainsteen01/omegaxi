@@ -1800,7 +1800,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        emailjs.init("YOUR_PUBLIC_KEY");
+        emailjs.init("Gvxa5q-tPx_G1PVvh");
 
         const mobileMenu = document.querySelector('.mobile-menu');
 
@@ -1887,7 +1887,7 @@
 
             e.preventDefault();
 
-            emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this).then(() => {
+            emailjs.sendForm("service_hd51fok", "template_d5l2o8m", this).then(() => {
                 alert('Thank you for your message! I will get back to you soon.');
                 this.reset();
             }).catch((error) => {
