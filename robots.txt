@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /wp-admin/
+
+Sitemap: https://omegaxi.in/sitemap.xml
+Sitemap: https://omegaxi.in/sitemap_index.xml
+
+# Block common bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Crawl delay for all bots (optional)
+Crawl-delay: 2
